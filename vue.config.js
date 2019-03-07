@@ -6,8 +6,16 @@
 */
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir)
+const mockIndexData = require('./mock/index.json')
 module.exports = {
 	publicPath: './',
+	devServer: {
+		before(app){
+	      app.get('/api/index.json',(req,res,next)=>{
+	        res.json(mockIndexData);
+	      })
+	    }
+	},
 	// 配置路径别名
 	chainWebpack: config => {
 		config.resolve.alias
