@@ -7,12 +7,16 @@
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir)
 const mockIndexData = require('./mock/index.json')
+const mockCityData = require('./mock/city.json')
 module.exports = {
 	publicPath: './',
 	devServer: {
 		before(app){
 	      app.get('/api/index.json',(req,res,next)=>{
 	        res.json(mockIndexData);
+	      }),
+	      app.get('/api/city.json',(req,res,next)=>{
+	        res.json(mockCityData);
 	      })
 	    }
 	},
