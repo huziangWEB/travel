@@ -40,7 +40,7 @@
 		}
 	}
 </script>
-<style lang="stylus" scoped="">
+<style lang="stylus" scoped>
 @import '~styles/varibles.styl'
 @import '~styles/mixins.styl'
 	.icons >>> .swiper-container

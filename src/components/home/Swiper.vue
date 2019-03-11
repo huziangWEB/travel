@@ -1,7 +1,7 @@
 <template>
 	<div class="wrapper">
 		<swiper :options="swiperOption" v-if="showSwiper">
-			<swiper-slide v-for="item of list">
+			<swiper-slide v-for="item of list" :key="item.id">
 				<img class="swiper-img" :src="item.imgUrl" :key="item.id">
 			</swiper-slide>
 			<div class="swiper-pagination"  slot="pagination"></div>
@@ -29,7 +29,7 @@
 		}
 	}
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 	.wrapper >>> .swiper-pagination-bullet-active
 			background: #fff !important
 	.wrapper

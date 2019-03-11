@@ -24,8 +24,7 @@ export default new Vuex.Store({
 			state.city = city
 			try {
 				localStorage.city = city	
-			} catch(e) {}
-			
+			} catch (e) {}	
 		}
 	}
 })

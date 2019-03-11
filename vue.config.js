@@ -10,7 +10,12 @@ const mockIndexData = require('./mock/index.json')
 const mockCityData = require('./mock/city.json')
 module.exports = {
 	publicPath: './',
+	lintOnSave: false,
 	devServer: {
+		overlay: {
+	      warnings: true,
+	      errors: true
+	    },
 		before(app){
 	      app.get('/api/index.json',(req,res,next)=>{
 	        res.json(mockIndexData);
@@ -24,6 +29,7 @@ module.exports = {
 	chainWebpack: config => {
 		config.resolve.alias
 			.set('styles', resolve('src/assets/styles/'))
+			.set('common', resolve('src/common/'))
 	}
 
 }
